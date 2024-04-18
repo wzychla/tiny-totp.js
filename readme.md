@@ -26,6 +26,18 @@ const code = await totp.gen();
 console.log( code );
 ```
 
+## Q&A
+
+Q: Does this implementation work with Google/Microsoft Authenticator applications?
+A: Yes, this implementation works correctly as a code generator for Google/Microsoft Authenticators. 
+
+Q: Should I use it server side or client side?
+A: Both, depending on what you want to do. If you implement a server-side node.js app, you generate codes
+server side and validate codes sent by users (which are generated at client-side with compliant applications
+like Google/Microsoft Authenticator). If you implement a client-side replacement for Google/Microsoft
+Authenticator, codes generated with this library will be exactly the same as codes generated with
+Google/Microsoft Authenticators.
+
 ## Repository content
 
 * `totp.js` - actual TOTP implementation
