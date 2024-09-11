@@ -48,9 +48,13 @@ Google/Microsoft Authenticators.
 
 ## Version history and TODOs
 
+### 1.1 2024-09-11
+
+* fixed the `_bigIntToByteArray`. It no longer assumes there are 16 bytes (128 bits), instead, it reads the whole key. Thus, longer keys (e.g. 160 bits) are correctly handled
+
 ### 1.0
 
-Initial release
+* initial release
 
 ### Todos
 
