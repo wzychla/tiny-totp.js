@@ -24,6 +24,11 @@ const totp = new TOTP(key);
 // generate code
 const code = await totp.gen();
 console.log( code );
+
+// Get prev, present and future codes
+await totp.gen(timeStep=30, bias= +30); // 30s back
+await totp.gen(timeStep=30, bias=   0); // current
+await totp.gen(timeStep=30, bias= -30); // 30s forward
 ```
 
 ## Q&A
